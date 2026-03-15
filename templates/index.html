@@ -19,7 +19,7 @@
         <fieldset>
           <legend>Features</legend>
           {% for f in feature_names %}
-          <label class="feature">{{ f.replace('_',' ') | title }}: <input type="number" step="any" name="{{ f }}" value="0" required></label>
+          <label class="feature">{{ feature_disp[f] }}: <input type="number" step="any" name="{{ f }}" value="0" required></label>
           {% endfor %}
         </fieldset>
 

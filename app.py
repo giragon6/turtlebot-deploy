@@ -12,6 +12,17 @@ FEATURE_NAMES = [
     "dune_height", "max_dune_slope", "average_dune_slope", "distance_from_shoreline"
 ]
 
+FEATURE_DISP = {
+    "elevation": "Elevation (meters above sea level)",
+    "beach_width": "Beach Width (meters)",
+    "max_beach_slope": "Maximum Beach Slope",
+    "avg_beach_slope": "Average Beach Slope",
+    "dune_height": "Maximum Dune Height (meters)",
+    "max_dune_slope": "Maximum Dune Slope",
+    "average_dune_slope": "Average Dune Slope",
+    "distance_from_shoreline": "Distance from Shoreline (meters)"
+}
+
 FEATURE_MEANS = {
     "elevation": 3.2,
     "beach_width": 18.9,
@@ -37,7 +48,7 @@ FEATURE_STDEVS = {
 
 @app.route('/')
 def index():
-    return render_template('index.html', feature_names=FEATURE_NAMES)
+    return render_template('index.html', feature_names=FEATURE_NAMES, feature_disp=FEATURE_DISP)
     
 @app.route('/predict', methods=['POST'])
 def predict():
