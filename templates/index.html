@@ -8,25 +8,35 @@
   </head>
   <body>
     <div class="container">
-      <h1>Sea Turtle Nest Presence Prediction</h1>
+      <h1>Sea Turtle Nest Presence Prediction with Turtlebot</h1>
 
+      <h2>What is Turtlebot?</h2>
+      <p>Turtlebot is a binary classification machine learning model based on easy-to-acquire data accompanied by a physical prototype bot that can collect that data to demonstrate feasability.</p>
+
+      <h2>A Turtlebot Demo</h2>
+      <p>Be Turtlebot in this simple demo! Send our model details about your location and characteristics of the beach around you to get a prediction of nest presence with a confidence value.</p>
+      <p>Not sure what values to enter? Generate some random data based on the mean and standard deviation of our model's dataset to get started!</p>
       <form id="predictForm">
-        <div class="row" id="latlong">
-          <label>Latitude: <input type="text" id="latitude" name="latitude" value="34.2074769"></label>
-          <label>Longitude: <input type="text" id="longitude" name="longitude" value="-77.7946203"></label>
-        </div>
-
         <fieldset>
-          <legend>Features</legend>
-          {% for f in feature_names %}
-          <label class="feature">{{ feature_disp[f] }}: <input type="number" step="any" name="{{ f }}" value="0" required></label>
-          {% endfor %}
-        </fieldset>
+            <legend>Turtlebot-sent Data</legend>
 
-        <div class="row">
-            <button type="button" id="randomizeFeaturesBtn">Input Sample Feature Values</button>
-            <button type="submit">Predict and Show on Map</button>
-        </div>        
+            <div class="row" id="latlong">
+              <label>Latitude: <input type="text" id="latitude" name="latitude" value="34.2074769"></label>
+              <label>Longitude: <input type="text" id="longitude" name="longitude" value="-77.7946203"></label>
+            </div>
+    
+            <fieldset>
+              <legend>Features</legend>
+              {% for f in feature_names %}
+              <label class="feature">{{ feature_disp[f] }}: <input type="number" step="any" name="{{ f }}" value="0" required></label>
+              {% endfor %}
+            </fieldset>
+    
+            <div class="row">
+                <button type="button" id="randomizeFeaturesBtn">Input Sample Feature Values</button>
+                <button type="submit">Predict and Show on Map</button>
+            </div>        
+        </fieldset>
       </form>
 
       <div id="result">
