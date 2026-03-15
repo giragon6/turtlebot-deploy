@@ -11,9 +11,9 @@
       <h1>Sea Turtle Nest Presence Prediction</h1>
 
       <form id="predictForm">
-        <div class="row">
-          <label>Latitude: <input type="text" id="latitude" name="latitude" value="0"></label>
-          <label>Longitude: <input type="text" id="longitude" name="longitude" value="0"></label>
+        <div class="row" id="latlong">
+          <label>Latitude: <input type="text" id="latitude" name="latitude" value="34.2074769"></label>
+          <label>Longitude: <input type="text" id="longitude" name="longitude" value="-77.7946203"></label>
         </div>
 
         <fieldset>
@@ -32,8 +32,6 @@
       <div id="result">
         <h2>Prediction</h2>
         <div id="predictionOutput">No prediction yet.</div>
-        <h3>Features used</h3>
-        <pre id="featuresOutput">-</pre>
       </div>
 
       <div id="mapWrap">

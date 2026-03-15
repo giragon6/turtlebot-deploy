@@ -56,8 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('predictionOutput').textContent = 'Error: ' + data.error;
       }
 
-      document.getElementById('featuresOutput').textContent = JSON.stringify(payload, null, 2);
-
       const iframe = document.getElementById('mapframe');
       const embedUrl = `https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
       iframe.src = embedUrl;
