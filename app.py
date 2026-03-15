@@ -17,7 +17,7 @@ FEATURE_DISP = {
     "beach_width": "Beach Width (meters)",
     "max_beach_slope": "Maximum Beach Slope",
     "avg_beach_slope": "Average Beach Slope",
-    "dune_height": "Maximum Dune Height (meters)",
+    "dune_height": "Maximum Dune Height (meters above sea level)",
     "max_dune_slope": "Maximum Dune Slope",
     "average_dune_slope": "Average Dune Slope",
     "distance_from_shoreline": "Distance from Shoreline (meters)"
