@@ -48,7 +48,12 @@ FEATURE_STDEVS = {
 
 @app.route('/')
 def index():
-    return render_template('index.html', feature_names=FEATURE_NAMES, feature_disp=FEATURE_DISP)
+    return render_template('index.html', 
+        feature_names=FEATURE_NAMES, 
+        feature_disp=FEATURE_DISP,
+        feature_means=FEATURE_MEANS,
+        feature_stdevs=FEATURE_STDEVS
+    )
     
 @app.route('/predict', methods=['POST'])
 def predict():

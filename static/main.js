@@ -1,5 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('predictForm');
+
+  function randn() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  const randomizeBtn = document.getElementById('randomizeFeaturesBtn');
+  if (randomizeBtn && window.featureStats) {
+    randomizeBtn.addEventListener('click', () => {
+      const { means, stdevs } = window.featureStats;
+      Object.keys(means).forEach((feature) => {
+        const input = form.querySelector(`input[name="${feature}"]`);
+        if (!input) return;
+
+        const mean = Number(means[feature]);
+        const std = Number(stdevs[feature] || 0);
+        const value = mean + std * randn();
+
+        // Keep display clean while preserving decimals
+        input.value = Number.isFinite(value) ? value.toFixed(3) : mean.toFixed(3);
+      });
+    });
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 

@@ -12,8 +12,8 @@
 
       <form id="predictForm">
         <div class="row">
-          <label>Latitude: <input type="text" id="latitude" name="latitude" value="0" required></label>
-          <label>Longitude: <input type="text" id="longitude" name="longitude" value="0" required></label>
+          <label>Latitude: <input type="text" id="latitude" name="latitude" value="0"></label>
+          <label>Longitude: <input type="text" id="longitude" name="longitude" value="0"></label>
         </div>
 
         <fieldset>
@@ -23,7 +23,10 @@
           {% endfor %}
         </fieldset>
 
-        <button type="submit">Predict and Show on Map</button>
+        <div class="row">
+            <button type="button" id="randomizeFeaturesBtn">Input Sample Feature Values</button>
+            <button type="submit">Predict and Show on Map</button>
+        </div>        
       </form>
 
       <div id="result">
@@ -39,6 +42,12 @@
       </div>
     </div>
 
+    <script>
+        window.featureStats = {
+        means: {{ feature_means | tojson }},
+        stdevs: {{ feature_stdevs | tojson }}
+    };
+    </script>
     <script src="/static/main.js"></script>
   </body>
 </html>
